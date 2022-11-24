@@ -16,7 +16,7 @@ if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
     data
     g = nx.karate_club_graph()
-    g = nx.from_pandas_edgelist(data, source = "road", target = "Destination") #Use the Graph API to create an empty network graph object
+    g = nx.from_pandas_edgelist(data, source = "origin", target = "destination") #Use the Graph API to create an empty network graph object
 
     partition = nx_comm.louvain_communities(g)
 
